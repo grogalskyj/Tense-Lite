@@ -7,7 +7,22 @@ plugins {
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
 	id("org.flywaydb.flyway") version "8.2.0"
+	id("com.avast.gradle.docker-compose") version "0.16.2"
+	kotlin("plugin.allopen") version "1.6.21"
 }
+
+
+allOpen {
+
+annotation("javax.persistence.Entity")
+
+annotation("javax.persistence.Embeddable")
+
+annotation("javax.persistence.MappedSuperclass")
+
+}
+
+
 
 group = "com.jahnelgroup.tense-lite"
 version = "0.0.1-SNAPSHOT"
@@ -15,6 +30,14 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
+	maven {
+
+  url = uri("https://plugins.gradle.org/m2/")
+
+  }
+
+  mavenLocal()
+	
 }
 
 dependencies {
