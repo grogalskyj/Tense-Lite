@@ -64,7 +64,6 @@ tasks.withType<Test> {
 
 
 
-
 flyway {
 
 url = "jdbc:mysql://127.0.0.1:3306/tense-lite?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC"
