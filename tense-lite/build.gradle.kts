@@ -61,3 +61,17 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+
+
+flyway {
+
+url = "jdbc:mysql://127.0.0.1:3306/tense-lite?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC"
+
+user = "root"
+
+password = "rootpassword"
+
+locations = arrayOf("filesystem:src/main/resources/db/migration")
+
+}
