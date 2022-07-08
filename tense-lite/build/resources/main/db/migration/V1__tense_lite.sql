@@ -15,7 +15,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
 --
+
 -- Table structure for table `assignments`
 --
 
@@ -30,7 +32,7 @@ CREATE TABLE `assignments` (
   KEY `user_id_idx` (`id_user`),
   KEY `id_project_idx` (`id_project`),
   CONSTRAINT `id_project` FOREIGN KEY (`id_project`) REFERENCES `projects` (`idprojects`),
-  CONSTRAINT `user_id` FOREIGN KEY (`id_user`) REFERENCES `users` (`idUsers`)
+  CONSTRAINT `user_id` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -109,12 +111,12 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `idUsers` int NOT NULL,
+  `id` int NOT NULL,
   `First_Name` varchar(45) NOT NULL,
   `Last_Name` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   `Security_Role` varchar(45) NOT NULL,
-  PRIMARY KEY (`idUsers`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -124,7 +126,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'George','Rogalskyj','grogalskyj@jahnelgroup.com','basic user'),(2,'Jory','Hutchins','jhutchins@jahnelgroup.com','admin user');
+INSERT INTO `users` VALUES (1,'George','Rogalskyj','grogalskyj@jahnelgroup.com','basic'),(2,'Jory','Hutchins','jhutchins@jahnelgroup.com','admin');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -137,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-21 16:30:07
+-- Dump completed on 2022-06-21 16:30:21

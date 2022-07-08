@@ -14,7 +14,7 @@ class User{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "id_Users")
+    @Column(nullable = false, name = "id")
     var id_Users: Long = 0L
 
 
@@ -39,7 +39,7 @@ class User{
 
     @Column(name = "Security_Role",  nullable = false)
 
-    var enabled: Boolean = true
+    var enabled = ""
 
 
 
