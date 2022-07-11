@@ -32,7 +32,7 @@ CREATE TABLE `assignments` (
   KEY `user_id_idx` (`id_user`),
   KEY `id_project_idx` (`id_project`),
   CONSTRAINT `id_project` FOREIGN KEY (`id_project`) REFERENCES `projects` (`idprojects`),
-  CONSTRAINT `user_id` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
+  CONSTRAINT `user_id` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -111,7 +111,7 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(45) NOT NULL,
   `Last_Name` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,

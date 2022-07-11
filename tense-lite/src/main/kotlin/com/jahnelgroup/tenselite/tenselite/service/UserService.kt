@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.jahnelgroup.tenselite.tenselite.entity.User;
 import java.net.FileNameMap
 import javax.persistence.criteria.CriteriaBuilder.In
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Service
@@ -20,9 +21,21 @@ class UserService(
 
   }
 
-    fun find_User(id : Long): User {
+    fun getUserById(id : Long): User {
+        return userRepository.findById(id).get()
+    }
 
-        return userRepository.getReferenceById(id)
+    fun addUser(@RequestBody user: User) : String{
+             userRepository.save(user)
+        return "All done"
+    }
+
+    fun deleteUser(id : Long): String{
+        if(userRepository.existsById(id)) {
+            userRepository.deleteById(id)
+            return " Deleted"
+        }
+       return "Id Not Found!"
     }
 
 

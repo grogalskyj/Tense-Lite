@@ -76,4 +76,6 @@ password = "rootpassword"
 
 locations = arrayOf("filesystem:src/main/resources/db/migration")
 
+
+	ignoreMissingMigrations = true
 }

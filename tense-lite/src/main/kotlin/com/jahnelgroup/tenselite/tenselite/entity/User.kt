@@ -1,5 +1,4 @@
 package com.jahnelgroup.tenselite.tenselite.entity
-
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
