@@ -1,0 +1,30 @@
+.register_field{
+
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color : 	#3b444b
+    
+}
+
+.register_card{
+    justify-content: center;
+    width: 20%;
+    align-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+    background-color: aliceblue;
+}
+
+
+
+mat-card-title{
+    color : 	#3b444b
+}
+
+
+#acct_button :hover{
+
+    transform: scale(1.2);
+}

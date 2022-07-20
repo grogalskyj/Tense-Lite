@@ -1,0 +1,36 @@
+<div class = "login_body">
+    <div class = "left_login"></div>
+
+    <div class = "right_login">
+<img src="https://tense.jahnelgroup.com/assets/imgs/tense-clock-blue.svg "style = "height: 50px;"><span style = "font-size: 50px;">TENSE</span>
+<br>
+<br>
+<firebase-ui></firebase-ui>
+<div>
+<mat-divider >OR</mat-divider>
+</div>
+<div>
+    <br>
+
+<label class = 'label'  for= 'username'>Username or Email</label><br>
+<input #username  type = "email" placeholder="Email">
+</div>
+
+<br>
+
+<div>
+
+    <label class = 'label' for= 'password'>Password</label><br>
+    <input #password type = "password" placeholder="Password">
+    </div>
+<br> 
+
+<!-- (click) = "UserLogin(username.value, password.value)-->
+
+<a [routerLink] = "['/home']"><button mat-button color = "custom-blue" (click) = "UserLogin(username.value, password.value)"> Sign In</button></a><br><Br>
+<div><span> OR </span></div><br>
+<a [routerLink] = "['/register-user']" ><button mat-button color = "primary" id = "signupbutton">Sign Up</button></a>
+
+    </div>
+
+</div>

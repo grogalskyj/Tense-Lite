@@ -39,7 +39,4 @@ class User{
     @Column(name = "Security_Role",  nullable = false)
 
     var enabled = ""
-
-
-
 }

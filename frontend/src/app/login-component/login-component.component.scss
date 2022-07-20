@@ -1,0 +1,54 @@
+
+
+.login_body{
+
+    text-align:  center;
+    display: flex;
+    height: 1000px;
+}
+
+.left_login{
+    width:40%;
+
+    background-image: url('https://tense.jahnelgroup.com/login-img-black.c83274de91e0ff4baa82.svg');
+}
+
+
+.right_login{
+
+    width: 60%;
+    padding-top: 10%;
+}
+
+.mat-custom-blue{
+    background: deepskyblue;
+    width: 20em;
+    height: 4em;
+    color: #fff;
+}
+
+
+
+.label{
+    text-align: left;
+    font-size: 180%;
+    font-weight: bold;
+    
+}
+
+.right_login input{
+    font-size: 200%;
+   
+}
+
+#signupbutton{
+    background: purple;
+    color: #fff
+}
+
+input {
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px; 
+    height: 15px;    
+}

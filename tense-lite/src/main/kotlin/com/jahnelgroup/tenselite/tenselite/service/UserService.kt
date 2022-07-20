@@ -21,8 +21,8 @@ class UserService(
 
   }
 
-    fun getUserById(id : Long): User {
-        return userRepository.findById(id).get()
+    fun getUser(email : String): User {
+        return userRepository.findByEmail(email)
     }
 
     fun addUser(@RequestBody user: User) : String{

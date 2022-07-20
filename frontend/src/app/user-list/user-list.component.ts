@@ -8,7 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
- users$: Observable<any>;
+ "users$": Observable<any>;
 
   constructor(private userService : UserService) { }
 

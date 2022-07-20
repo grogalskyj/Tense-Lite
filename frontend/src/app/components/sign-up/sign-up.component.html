@@ -1,0 +1,47 @@
+<mat-card class = "register_card">
+    <mat-card-title>Register Here</mat-card-title>
+    <br>
+<div class = "register_field">
+<mat-form-field appearance = "fill">
+
+    <div>
+    <mat-label>Email</mat-label>
+<input matInput #email type = "email">
+</div>
+</mat-form-field>
+
+
+<mat-form-field appearance = "fill">
+<br>
+<div>
+<mat-label>Password</mat-label>
+
+    <input #password type = "password" matInput>
+
+</div>
+</mat-form-field>
+
+<mat-form-field appearance = "fill">
+
+<div>
+    <input #FirstName matInput placeholder= "First Name">
+</div>
+
+</mat-form-field>
+
+<mat-form-field appearance = "fill">
+<div>
+    <input #LastName matInput placeholder= "Last Name">
+</div>
+
+</mat-form-field>
+<br>
+
+<button id ="create_acct_button" mat-raised-button (click) = "UserSignUp(email.value, password.value, FirstName.value, LastName.value)">Create Account</button>
+</div>
+
+</mat-card>
+
+
+
+<h2>{{account_creation_message}}</h2>

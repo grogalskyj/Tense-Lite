@@ -8,7 +8,6 @@ import java.util.StringJoiner
 
 var primaryId = 5L
 @RestController
-@CrossOrigin(origins = ["http://localhost:4200"])
 class UserController(
 
   val userService: UserService
@@ -23,10 +22,8 @@ class UserController(
 
 
     @GetMapping("/getuser")
-    fun findOne(@RequestParam id: Long): User {
-        return userService.getUserById(id)
-
-
+    fun findOne(@RequestParam email : String): User {
+        return userService.getUser(email)
     }
 
     @PostMapping(path = ["/adduser"])
