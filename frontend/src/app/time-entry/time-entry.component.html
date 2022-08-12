@@ -1,0 +1,50 @@
+<app-nav-bar></app-nav-bar>
+<div class = 'body'>
+    <br>
+
+    <div id = "calcard">
+
+<mat-form-field class="example-full-width" id = "date" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" #date (dateInput) = "dateChange($event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<br>
+<div id = 'formbody'>
+<div *ngFor = "let timeEntry of timeEntries">
+    <div class = 'formpage'>
+        <mat-card class = "project_box" id = {{timeEntry.idtime}}>
+        <mat-card-title>{{TitleProcess(timeEntry.description)}}</mat-card-title>
+        <br>
+        <span><mat-card class = 'description_box'>
+         <h4 style = "font-weight: bold;">Description of Work:</h4>
+        {{BodyProcess(timeEntry.description)}}
+        <h4 style = "font-weight: bold;">Hours:</h4>
+        {{timeEntry.numhours}}
+        </mat-card></span>
+        <div id = "icons">
+        <span class = 'garbage' ><button  mat-icon-button (click) = "DeleteTimeEntry(timeEntry.idtime)"><mat-icon [ngStyle]="{'color':'black'}">cancel</mat-icon></button></span>
+<span class = 'edit'><button  mat-icon-button (click) = "EditTimeEntry(date.value, timeEntry.numhours, timeEntry.description, timeEntry.idtime)"><mat-icon [ngStyle]="{'color':'black'}">create</mat-icon></button></span>
+
+
+</div>
+    </mat-card>
+    <br>
+    </div>
+
+
+
+
+</div>
+ <button mat-raised-button *ngIf="this.selectedDate != undefined" id = "TimeButton" (click)= "AddTimeEntry(this.selectedDate)">Add Time Entry</button>
+</div>
+
+ <br>
+ <br>
+</div>

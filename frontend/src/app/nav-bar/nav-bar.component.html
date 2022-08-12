@@ -1,0 +1,10 @@
+<app-home></app-home>
+<mat-toolbar id = "outer_tool">
+    <span>{{this.header_name}}</span>
+<mat-toolbar id = "inner_tool">
+    <mat-label>{{this.final_string}}</mat-label>
+   <mat-select>
+<mat-option (click) = "ToProfile()">Profile</mat-option> 
+<mat-option (click) = "SignOut()">Sign Out</mat-option> </mat-select>
+  </mat-toolbar>
+</mat-toolbar>

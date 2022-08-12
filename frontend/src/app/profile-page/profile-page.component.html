@@ -1,0 +1,41 @@
+<app-nav-bar></app-nav-bar>
+<div id = "body">
+<div id = "header">
+    <div id=  "background_info">
+    <h1>{{FName}} </h1> <h1>{{LName}}</h1>
+
+
+<br><br>
+<span id = "email"><h2>{{Email}}</h2> </span><span id = "Role"><h2>{{Role}}</h2> </span>
+    </div>
+</div>
+<br>
+
+<mat-card class = 'card' >
+<h2>Active Assignments</h2>
+<br><br>
+<div *ngFor = "let assignment of Current_Assignments">
+
+    <mat-card><span class = "ProjName">{{ConvertProjectId(assignment.projectId)}}</span><span class = "ProjRate">  Rate: {{assignment.rate}}<button (click) = "Deactivate_Assignment(assignment.assignmentId, assignment.projectId)" mat-button class = 'deactivate' *ngIf = "isAdmin">Deactivate</button></span></mat-card>
+    <br>
+
+</div>
+<br>
+
+<div id = ""><button mat-button *ngIf = "this.isAdmin" id = "addbutton" (click)= "addAssignment()"><mat-icon class = "addicon" >add</mat-icon>Add Assignment<mat-icon class = "addicon" >add</mat-icon></button></div>
+</mat-card>
+<br>
+<br>
+<mat-card class = 'card'>
+    <h2>Inactive Assignments</h2>
+    <br>
+
+    <div *ngFor = "let assignment of Past_Assignments">
+    
+        <mat-card><span class = "ProjName">{{ConvertProjectId(assignment.projectId)}}</span><span class = "ProjRate">   Rate: {{assignment.rate}}</span></mat-card><br>
+    </div>
+    </mat-card>
+    <br><br><br><br>
+
+    </div>
+

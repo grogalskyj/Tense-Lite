@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import { Token } from '@angular/compiler';
+import { TokenStorageService } from './token-storage.service';
 
 
 
@@ -15,11 +16,14 @@ export class AuthenticationService {
 
   "userData": Observable<firebase.User | null>
   "userToken" : string
+  "IsUserLoggedIn" : Boolean
+  // "accessToken" : string
 
 
 
-  constructor(private angularFireAuth: AngularFireAuth, private router : Router) {
+  constructor(private angularFireAuth: AngularFireAuth, private router : Router, private tokenStorage : TokenStorageService) {
     this.userData = angularFireAuth.authState
+    this.IsUserLoggedIn = false
 
   }
 
@@ -32,30 +36,35 @@ export class AuthenticationService {
 
   
  var res = await firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((result) => {this.router.navigate(['/home'])}).then(this.GetAccessToken).then((tok) => tok)
+    .then((result) => {this.router.navigate(['/time'])}).then(this.GetAccessToken).then((tok) => tok)
     .catch((error) => console.log(error))
 
   return res
    }
 
-   SignIn(email : string, password: string){
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((result) => this.router.navigate(['/home']))
-   .catch((error) => this.router.navigate(['/sign-in']))
+   async SignIn(email : string, password: string){
+  var res =  await firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((result) =>  this.router.navigate(['/time'])).then(this.GetAccessToken).then((tok) => tok)
+   .catch((error) => this.router.navigate(['/sign-in']).then(() => console.log(error)))
 
+   return res
    }
 
    SignOut(){
-    return firebase.auth().signOut
+    return firebase.auth().signOut()
    }
 
    CheckAuthState(){
     this.userData.subscribe(user => {
-      if (user){
+      if (user != null){
+        this.IsUserLoggedIn = true
+        console.log('hererio cheerio')
+        
+
 
       }
       else {
-
+        this.IsUserLoggedIn = false
         this.router.navigate(['/Login'])
 
       }
@@ -80,6 +89,10 @@ export class AuthenticationService {
     return token  
 
 
+  }
+
+  isLoggedin() : Boolean{
+    return this.IsUserLoggedIn
   }
 
 

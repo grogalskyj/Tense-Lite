@@ -1,0 +1,30 @@
+<mat-card class = "register_card">
+    <mat-card-title>Add new Project</mat-card-title>
+    <br>
+<div class = "register_field">
+    <h2></h2>
+<mat-form-field appearance = "fill">
+
+<mat-label>Project</mat-label>
+<mat-select #Option>
+
+<mat-option *ngFor = "let project of allProjects" value = {{project.projectId}} >{{project.project_name}}</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field appearance = "fill">
+
+    <div>
+    <mat-label>Hourly Rate</mat-label>
+<input matInput #Rate>
+</div>
+</mat-form-field>
+
+<br>
+
+<button id ="TEbutton" mat-raised-button (click) = "AddProject(Option.value, Rate.value)">Add Project</button>
+</div> 
+
+</mat-card>
+
+<br><br>
+<a ><button id = "BackButton" mat-raised-button (click) = "backClicked()">Back</button></a>

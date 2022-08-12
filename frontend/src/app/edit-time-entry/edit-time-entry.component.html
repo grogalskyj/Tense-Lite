@@ -1,0 +1,35 @@
+<mat-card class = "register_card">
+    <mat-card-title>Edit Time Card</mat-card-title>
+    <br>
+<div class = "register_field">
+    <h2></h2>
+<mat-form-field appearance = "fill">
+
+<mat-label>Project</mat-label>
+<mat-select #ProjectName  >
+<mat-option *ngFor = "let project of assignedProjects" value = {{project.projectId}}>{{project.projectId}}</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field appearance = "fill">
+
+    <div>
+    <mat-label>Hours Worked</mat-label>
+<input matInput #numhours value = {{NumHours}}>
+</div>
+</mat-form-field>
+<mat-form-field appearance = "fill">
+
+    <div id = "description">
+    <mat-label>Work Description</mat-label>
+<input matInput #work_description value = {{Work_Description}}>
+</div>
+</mat-form-field>
+<br>
+
+<a [routerLink] = "['/time']"><button id ="TEbutton" mat-raised-button (click) = "EditTime(this.Date, work_description.value, ProjectName.value, numhours.value, this.id)" >Edit Time</button></a>
+</div> 
+
+</mat-card>
+
+<br><br>
+<a [routerLink] = "['/time']"><button id = "BackButton" mat-raised-button>Back</button></a>
