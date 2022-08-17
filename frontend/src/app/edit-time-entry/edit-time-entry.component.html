@@ -7,7 +7,11 @@
 
 <mat-label>Project</mat-label>
 <mat-select #ProjectName  >
+<<<<<<< HEAD
 <mat-option *ngFor = "let project of assignedProjects" value = {{project.projectId}}>{{ConvertProjectId(project.projectId)}}</mat-option>
+=======
+<mat-option *ngFor = "let project of assignedProjects" value = {{project.projectId}}>{{project.projectId}}</mat-option>
+>>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
 </mat-select>
 </mat-form-field>
 <mat-form-field appearance = "fill">

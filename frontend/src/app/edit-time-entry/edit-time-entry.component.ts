@@ -17,7 +17,10 @@ export class EditTimeEntryComponent implements OnInit {
   Project : string
   id : string
   assignedProjects : any
+<<<<<<< HEAD
   projectMap: any
+=======
+>>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
 
 
   constructor( public route : ActivatedRoute, private timeService: TimeService, private projectService: ProjectsService,
@@ -31,9 +34,12 @@ export class EditTimeEntryComponent implements OnInit {
     this.Project = this.TitleProcess(params['Work_Description']);
     this.id = params['id']
     this.assignmentService.getUserAssignments(Number(this.currentUser.getUserId())).subscribe(res => this.assignedProjects = res)
+<<<<<<< HEAD
     this.projectService.IdtoNameMap()
     this.projectMap = this.projectService.getProjectMap()
     
+=======
+>>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
     })
 
   }
@@ -66,11 +72,15 @@ export class EditTimeEntryComponent implements OnInit {
 
 
    EditTime(Date : string, Work_Description : string, projId : string, numhours: string, timeId : string){
+<<<<<<< HEAD
     console.log(projId)
+=======
+>>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
     Date = this.DateConversion(Date)
     return this.timeService.EditTime(Date, numhours, Work_Description, timeId, projId)
    }
 
+<<<<<<< HEAD
    
    ConvertProjectId(id : number){
 
@@ -80,4 +90,6 @@ export class EditTimeEntryComponent implements OnInit {
   }
 
 
+=======
+>>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
 }
