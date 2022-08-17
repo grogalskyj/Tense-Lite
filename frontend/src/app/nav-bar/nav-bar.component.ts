@@ -39,10 +39,7 @@ export class NavBarComponent implements OnInit {
 
 
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
 
 
   
