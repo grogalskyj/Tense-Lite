@@ -48,11 +48,7 @@ export class TimeEntryComponent implements OnInit {
 
 dateChange(event : any){
 
-<<<<<<< HEAD
 var date = event.value.toLocaleString().substring(0,9)
-=======
-var date = event.value.toLocaleString().substring(0,8)
->>>>>>> 68ba6bba9c1cf7f38b6fcf47f30c5d48ec6e248c
 console.log(date)
 this.selectedDate= this.DateConversion(date)
 this.timeService.getTime(this.selectedDate, this.userId).subscribe(res => this.timeEntries = res)
