@@ -8,6 +8,7 @@ import java.util.StringJoiner
 
 var primaryId = 5L
 @RestController
+@CrossOrigin(origins = ["*"])
 class UserController(
 
   val userService: UserService
@@ -39,9 +40,29 @@ class UserController(
         return userService.addUser(newUser)
     }
 
-//    @PatchMapping(path = ["/updateuser/{id}"])
-//    fun updateUser(@PathVariable(value = "id") id : Long, @Requestparam newUserDetails:
-//    }
+    @PatchMapping(path = ["/updateuser"])
+    fun updateUser(@RequestParam Email : String, @RequestBody newUserDetails : MutableMap<String, String> ) :
+    String{
+        print(newUserDetails.keys)
+        val olduser = this.findOne(Email)
+        print(olduser)
+        for (key in newUserDetails.keys){
+            if (key == "email" ){
+                olduser.email = newUserDetails["email"].toString()
+            }
+            if (key == "First_Name"){
+                olduser.First_Name = newUserDetails["First_Name"].toString()
+            }
+            if (key == "Last_Name"){
+                olduser.lastName = newUserDetails["Last_Name"].toString()
+            }
+            if (key == "Security_Role"){
+                olduser.enabled = newUserDetails["Security_Role"].toString()
+            }
+        }
+
+        return userService.updateUser(olduser)
+    }
 
 
     @DeleteMapping(path = ["/delete/{id}"])

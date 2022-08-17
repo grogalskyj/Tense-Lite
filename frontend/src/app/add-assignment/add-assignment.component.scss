@@ -1,0 +1,44 @@
+.register_field{
+
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color : 	#3b444b
+    
+}
+
+.register_card{
+    justify-content: center;
+    width: 20%;
+    align-content: center;
+    margin-top: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 20%;
+    background-color: pink;
+    
+}
+
+mat-card-title{
+    color : 	#3b444b;
+    text-align: center;
+}
+
+
+#description{
+
+    width: 100% !important;
+
+}
+
+#BackButton{
+
+margin-left: 46%;
+width : 10%;
+background-color: #5d6d79;
+color: white;
+
+
+}
+

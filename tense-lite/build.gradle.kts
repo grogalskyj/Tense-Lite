@@ -51,6 +51,10 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation ("org.flywaydb:flyway-core:8.4.4")
 	implementation ("org.flywaydb:flyway-mysql:8.4.4")
+	// implementation ("org.springframework.boot:spring-boot-starter-security")
+	// implementation ("org.springframework.boot:spring-boot-starter-oauth2-resource-server:2.4.5")
+	// implementation("org.springframework.security:spring-security-oauth2-jose")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,0 +1,35 @@
+<app-home></app-home><app-nav-bar></app-nav-bar>
+<br>
+<br>
+
+<div class = project_container>
+
+    <h1>Projects</h1>
+    <br><br>
+<ul *ngFor=" let project of projects; index as i">
+<div id = {{project.project_name}}>
+<mat-card class = "project_box">
+     
+
+<mat-card-title>{{project.project_name}}</mat-card-title>
+<br>
+<span>Start Date: {{project.start_date}}</span>
+<br>
+<span>End Date: {{project.end_date}}</span>
+<br>
+<span>Billable? {{project.billable}}</span>
+<br>
+<span class = 'garbage' ><button *ngIf = "admin == true" mat-icon-button (click) = "DeleteProject(project.project_name)"><mat-icon [ngStyle]="{'color':'black'}">cancel</mat-icon></button></span>
+<span class = 'edit'><button *ngIf = "admin == true" mat-icon-button (click) = "EditProject(project.project_name, project.start_date, project.end_date, project.billable)"><mat-icon [ngStyle]="{'color':'black'}">create</mat-icon></button></span>
+
+
+</mat-card>
+</div>
+
+</ul>
+
+
+<a id = "newProjectButton" [routerLink] = "['/newProject']"><button mat-raised-button color = primary  *ngIf = "admin == true" >Create New Project!</button></a>
+<br>
+<br>
+</div>

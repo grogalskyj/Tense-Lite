@@ -1,0 +1,62 @@
+.container{
+    border-style: double;
+    border-color :red;
+    margin: 100px;
+    width: 100%;
+    text-align: center;
+    
+    
+
+}
+
+.body{
+
+    margin-left: 20%;
+}
+
+#datecard{
+
+    width: 23%;
+    background-color: rgb(206, 168, 206);
+    margin-left: 40%;
+}
+
+#date{
+    text-align: center;
+    margin-left: 13%;
+    
+}
+
+#TimeButton{
+    margin-left: 31%;
+    background-color: rgb(136, 136, 196) ;
+}
+
+.project_box{
+
+    margin-right: 30%;
+    background-color: aliceblue;
+}
+
+
+.description_box{
+
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+}
+
+
+#icons{
+    margin-left: 46%;
+    justify-content: center;
+}
+
+#calcard{
+    font-size: 20px;
+    margin-left: 20%;
+}
+
+#formbody{
+
+    margin-left: 5%;
+}

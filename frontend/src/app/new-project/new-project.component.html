@@ -1,0 +1,55 @@
+<mat-card class = "register_card">
+    <mat-card-title>Register Project Here</mat-card-title>
+    <br>
+<div class = "register_field">
+<mat-form-field appearance = "fill">
+
+    <div>
+    <mat-label>Project Name</mat-label>
+<input matInput #Name>
+</div>
+</mat-form-field>
+
+
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput #SDate [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput #EDate [matDatepicker]="newpicker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="newpicker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #newpicker></mat-datepicker>
+  </mat-form-field>
+
+<mat-form-field appearance = "fill">
+<div>
+    <mat-label>Billable?</mat-label>
+    <mat-select #Billable>
+        <mat-option value = "true">true</mat-option>
+        <mat-option value = "false">false</mat-option>
+    </mat-select>
+
+</div>
+
+</mat-form-field>
+<br>
+
+<a></a><button id ="acct_button" mat-raised-button (click) = "CreateProject(Name.value, SDate.value, EDate.value, Billable.value)" >Create Project</button>
+</div>
+
+</mat-card>
+
+
+
+

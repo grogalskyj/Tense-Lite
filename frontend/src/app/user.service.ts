@@ -22,7 +22,7 @@ console.log('000000000000000000')
   const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type' : 'application/json',
-      Authorization : token
+      'Authorization' : token
     })
   }
   
@@ -42,5 +42,11 @@ console.log('000000000000000000')
     return res
   }
 
+
+  updateUserRole(Email :string ){
+    var rolemap = {'Security_Role': 'Admin'}
+    var res = this.http.patch('http://localhost:8080/updateuser?Email='+Email, rolemap)
+    res.subscribe(x => console.log(x))
+  }
 
   }

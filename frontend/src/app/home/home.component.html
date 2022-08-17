@@ -1,1 +1,19 @@
-<p>home works!</p>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened class = "sidenav">
+        <img id = "tense_logo" src="https://tense.jahnelgroup.com/assets/imgs/tense-clock-blue.svg "style = "height: 60px;">
+        <br>
+        <div class = "icon_button" >
+        <a [routerLink] = "['/time']"><button mat-icon-button><mat-icon  [ngStyle]="{'color':'white'}">timelapse</mat-icon></button></a>
+        
+    </div>
+        <br><br>
+        <div class = "icon_button" >
+            <a [routerLink] = "['/projects']"><button mat-icon-button><mat-icon  [ngStyle]="{'color':'white'}">list</mat-icon></button></a>
+        </div>
+        <br><Br>
+        <div class = "icon_button" >
+            <a [routerLink] = "['/people']"><button mat-icon-button><mat-icon  [ngStyle]="{'color':'white'}">people</mat-icon></button></a>
+        </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  
